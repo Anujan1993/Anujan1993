@@ -8,11 +8,27 @@ interesting constraint is replacing what's there without breaking it. I led a sq
 through the ST180 Android revamp in Jetpack Compose, and now work on the ground-up
 Flutter rebuild that collapses two native codebases into one.
 
-Outside work I ship my own apps end to end — design, code, backend, store release.
+Outside work I ship my own apps end to end — design, code, backends, store release.
 
 ---
 
 ### Things I've shipped on my own
+
+**Lanka360** — *in store review*
+
+An all-in-one Flutter app for Sri Lanka: weather, cricket, currency, news, public
+holidays, government gazettes, emergency numbers, maps, everyday calculators and an
+offline NIC decoder — in English, Sinhala and Tamil throughout.
+
+Exam results were the interesting problem. The Department of Examinations publishes
+an HTML form and no API, and its host isn't reachable from my edge network, so the
+app renders the department's own page in a WebView: an index number goes straight
+from the phone to the department and never passes through me.
+
+Two services behind it — a Kotlin/Spring Boot API on Postgres, containerised and
+deployed to Render, and a Cloudflare Worker that KV-caches the fast-moving feeds.
+
+Flutter · Riverpod · GoRouter · Kotlin · Spring Boot · PostgreSQL · Docker · Cloudflare Workers
 
 **RainCheck SG** · [App Store](https://apps.apple.com/sg/app/raincheck-sg/id6796591148) · [Play Store](https://play.google.com/store/apps/details?id=com.raincheck.raincheck_sg)
 
@@ -43,7 +59,7 @@ no ticket sales.*
 **Mobile** — Flutter, Dart, Kotlin, Jetpack Compose, Java, React Native  
 **Architecture** — Clean Architecture, feature-first modules, MVVM, Riverpod, Coroutines  
 **Testing** — unit, widget and golden tests  
-**Backend & infra** — Cloudflare Workers, Workers KV, Firebase, REST APIs
+**Backend & infra** — Kotlin/Spring Boot, PostgreSQL, Docker, Cloudflare Workers & KV, Firebase
 
 ### Also
 
